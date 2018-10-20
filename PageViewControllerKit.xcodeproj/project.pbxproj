@@ -13,6 +13,7 @@
 		A052B913217ADD9F0049ED02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A052B912217ADD9F0049ED02 /* Assets.xcassets */; };
 		A052B916217ADD9F0049ED02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A052B914217ADD9F0049ED02 /* LaunchScreen.storyboard */; };
 		A052B91F217ADFF20049ED02 /* PagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B91E217ADFF20049ED02 /* PagViewController.swift */; };
+		A052B925217AE6D00049ED02 /* PageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A052B924217AE6D00049ED02 /* PageViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A052B915217ADD9F0049ED02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A052B917217ADD9F0049ED02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A052B91E217ADFF20049ED02 /* PagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagViewController.swift; sourceTree = "<group>"; };
+		A052B924217AE6D00049ED02 /* PageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PageViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,11 +70,20 @@
 		A052B91D217ADDAD0049ED02 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A052B91E217ADFF20049ED02 /* PagViewController.swift */,
+				A052B923217AE6BA0049ED02 /* PageViewController */,
 				A052B90D217ADD9A0049ED02 /* ViewController.swift */,
 				A052B90F217ADD9A0049ED02 /* ViewController.storyboard */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A052B923217AE6BA0049ED02 /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A052B91E217ADFF20049ED02 /* PagViewController.swift */,
+				A052B924217AE6D00049ED02 /* PageViewController.storyboard */,
+			);
+			path = PageViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +144,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A052B925217AE6D00049ED02 /* PageViewController.storyboard in Resources */,
 				A052B916217ADD9F0049ED02 /* LaunchScreen.storyboard in Resources */,
 				A052B913217ADD9F0049ED02 /* Assets.xcassets in Resources */,
 				A052B911217ADD9A0049ED02 /* ViewController.storyboard in Resources */,
@@ -295,7 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KP2474JSD4;
 				INFOPLIST_FILE = PageViewControllerKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -313,7 +325,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KP2474JSD4;
 				INFOPLIST_FILE = PageViewControllerKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -8,29 +8,50 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    static let reuseIdentifier = "ViewController"
-
-    let item = ["first", "second", "third"]
-    static func make() -> ViewController {
-        let storyboard = UIStoryboard(name: "ViewController", bundle: nil)
-        
+enum PageType: String {
+    case first
+    case second
+    case third
+    
+    func viewControllerColor() -> UIColor {
+        switch self {
+        case .first:
+            return UIColor.white
+        case .second:
+            return UIColor.yellow
+        case .third:
+            return UIColor.green
+        }
     }
+}
 
+final class ViewController: UIViewController {
+    static let reuseIdentifier = "ViewController"
+    
+    static func make(type: PageType) -> ViewController {
+        let storyboard = UIStoryboard(name: reuseIdentifier, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: reuseIdentifier) as! ViewController
+        viewController.pageType = type
+        return viewController
+    }
+    
     static func makeList() -> [ViewController] {
         return [
-            QuestionListViewController.make(userCategory: .cognition),
-            QuestionListViewController.make(userCategory: .report),
-            QuestionListViewController.make(userCategory: .money),
-            QuestionListViewController.make(userCategory: .service),
-            QuestionListViewController.make(userCategory: .family),
-            QuestionListViewController.make(userCategory: .etc)
+            ViewController.make(type: .first),
+            ViewController.make(type: .second),
+            ViewController.make(type: .third)
         ]
     }
-
+    
+    var pageType: PageType!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configure()
+    }
+    
+    private func configure() {
+        self.view.backgroundColor = pageType.viewControllerColor()
     }
 }
 
