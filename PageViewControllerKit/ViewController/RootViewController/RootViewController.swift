@@ -17,6 +17,7 @@ final class RootViewController: UIViewController {
         configure()
     }
 
+    
     private func configure() {
         embedPageViewController()
     }
