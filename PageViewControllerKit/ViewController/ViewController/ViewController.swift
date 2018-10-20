@@ -12,6 +12,8 @@ enum PageType: String {
     case first
     case second
     case third
+    case forth
+    case fifth
     
     func viewControllerColor() -> UIColor {
         switch self {
@@ -21,6 +23,10 @@ enum PageType: String {
             return UIColor.yellow
         case .third:
             return UIColor.green
+        case .forth:
+            return UIColor.blue
+        case .fifth:
+            return UIColor.purple
         }
     }
 }
@@ -39,7 +45,9 @@ final class ViewController: UIViewController {
         return [
             ViewController.make(type: .first),
             ViewController.make(type: .second),
-            ViewController.make(type: .third)
+            ViewController.make(type: .third),
+            ViewController.make(type: .forth),
+            ViewController.make(type: .fifth),
         ]
     }
 
