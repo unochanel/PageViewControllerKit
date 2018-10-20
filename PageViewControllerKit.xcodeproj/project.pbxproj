@@ -17,6 +17,8 @@
 		A052B92C217AFF210049ED02 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B92B217AFF210049ED02 /* RootViewController.swift */; };
 		A052B92E217AFF2D0049ED02 /* RootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A052B92D217AFF2D0049ED02 /* RootViewController.storyboard */; };
 		A052B931217B02290049ED02 /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B930217B02290049ED02 /* UIViewController+Ex.swift */; };
+		A052B93F217B13BC0049ED02 /* SegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B93D217B13BC0049ED02 /* SegmentCell.swift */; };
+		A052B940217B13BC0049ED02 /* SegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A052B93E217B13BC0049ED02 /* SegmentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		A052B92B217AFF210049ED02 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		A052B92D217AFF2D0049ED02 /* RootViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootViewController.storyboard; sourceTree = "<group>"; };
 		A052B930217B02290049ED02 /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
+		A052B93D217B13BC0049ED02 /* SegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCell.swift; sourceTree = "<group>"; };
+		A052B93E217B13BC0049ED02 /* SegmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 			children = (
 				A052B92B217AFF210049ED02 /* RootViewController.swift */,
 				A052B92D217AFF2D0049ED02 /* RootViewController.storyboard */,
+				A052B93D217B13BC0049ED02 /* SegmentCell.swift */,
+				A052B93E217B13BC0049ED02 /* SegmentCell.xib */,
 			);
 			path = RootViewController;
 			sourceTree = "<group>";
@@ -178,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A052B925217AE6D00049ED02 /* PageViewController.storyboard in Resources */,
+				A052B940217B13BC0049ED02 /* SegmentCell.xib in Resources */,
 				A052B916217ADD9F0049ED02 /* LaunchScreen.storyboard in Resources */,
 				A052B913217ADD9F0049ED02 /* Assets.xcassets in Resources */,
 				A052B92E217AFF2D0049ED02 /* RootViewController.storyboard in Resources */,
@@ -195,6 +202,7 @@
 				A052B91F217ADFF20049ED02 /* PagViewController.swift in Sources */,
 				A052B931217B02290049ED02 /* UIViewController+Ex.swift in Sources */,
 				A052B90E217ADD9A0049ED02 /* ViewController.swift in Sources */,
+				A052B93F217B13BC0049ED02 /* SegmentCell.swift in Sources */,
 				A052B92C217AFF210049ED02 /* RootViewController.swift in Sources */,
 				A052B90C217ADD9A0049ED02 /* AppDelegate.swift in Sources */,
 			);

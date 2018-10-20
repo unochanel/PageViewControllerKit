@@ -16,7 +16,7 @@ enum PageType: String {
     func viewControllerColor() -> UIColor {
         switch self {
         case .first:
-            return UIColor.black
+            return UIColor.white
         case .second:
             return UIColor.yellow
         case .third:
