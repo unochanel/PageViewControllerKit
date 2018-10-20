@@ -14,6 +14,9 @@
 		A052B916217ADD9F0049ED02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A052B914217ADD9F0049ED02 /* LaunchScreen.storyboard */; };
 		A052B91F217ADFF20049ED02 /* PagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B91E217ADFF20049ED02 /* PagViewController.swift */; };
 		A052B925217AE6D00049ED02 /* PageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A052B924217AE6D00049ED02 /* PageViewController.storyboard */; };
+		A052B92C217AFF210049ED02 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B92B217AFF210049ED02 /* RootViewController.swift */; };
+		A052B92E217AFF2D0049ED02 /* RootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A052B92D217AFF2D0049ED02 /* RootViewController.storyboard */; };
+		A052B931217B02290049ED02 /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B930217B02290049ED02 /* UIViewController+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		A052B917217ADD9F0049ED02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A052B91E217ADFF20049ED02 /* PagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagViewController.swift; sourceTree = "<group>"; };
 		A052B924217AE6D00049ED02 /* PageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PageViewController.storyboard; sourceTree = "<group>"; };
+		A052B92B217AFF210049ED02 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		A052B92D217AFF2D0049ED02 /* RootViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootViewController.storyboard; sourceTree = "<group>"; };
+		A052B930217B02290049ED02 /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +64,9 @@
 		A052B90A217ADD9A0049ED02 /* PageViewControllerKit */ = {
 			isa = PBXGroup;
 			children = (
-				A052B91D217ADDAD0049ED02 /* ViewController */,
 				A052B90B217ADD9A0049ED02 /* AppDelegate.swift */,
+				A052B91D217ADDAD0049ED02 /* ViewController */,
+				A052B92F217B01F80049ED02 /* Extension */,
 				A052B912217ADD9F0049ED02 /* Assets.xcassets */,
 				A052B914217ADD9F0049ED02 /* LaunchScreen.storyboard */,
 				A052B917217ADD9F0049ED02 /* Info.plist */,
@@ -70,9 +77,9 @@
 		A052B91D217ADDAD0049ED02 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A052B927217AFEE10049ED02 /* RootViewController */,
 				A052B923217AE6BA0049ED02 /* PageViewController */,
-				A052B90D217ADD9A0049ED02 /* ViewController.swift */,
-				A052B90F217ADD9A0049ED02 /* ViewController.storyboard */,
+				A052B926217AFEC50049ED02 /* ViewController */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -84,6 +91,32 @@
 				A052B924217AE6D00049ED02 /* PageViewController.storyboard */,
 			);
 			path = PageViewController;
+			sourceTree = "<group>";
+		};
+		A052B926217AFEC50049ED02 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A052B90D217ADD9A0049ED02 /* ViewController.swift */,
+				A052B90F217ADD9A0049ED02 /* ViewController.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A052B927217AFEE10049ED02 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A052B92B217AFF210049ED02 /* RootViewController.swift */,
+				A052B92D217AFF2D0049ED02 /* RootViewController.storyboard */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		A052B92F217B01F80049ED02 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A052B930217B02290049ED02 /* UIViewController+Ex.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +180,7 @@
 				A052B925217AE6D00049ED02 /* PageViewController.storyboard in Resources */,
 				A052B916217ADD9F0049ED02 /* LaunchScreen.storyboard in Resources */,
 				A052B913217ADD9F0049ED02 /* Assets.xcassets in Resources */,
+				A052B92E217AFF2D0049ED02 /* RootViewController.storyboard in Resources */,
 				A052B911217ADD9A0049ED02 /* ViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,7 +193,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A052B91F217ADFF20049ED02 /* PagViewController.swift in Sources */,
+				A052B931217B02290049ED02 /* UIViewController+Ex.swift in Sources */,
 				A052B90E217ADD9A0049ED02 /* ViewController.swift in Sources */,
+				A052B92C217AFF210049ED02 /* RootViewController.swift in Sources */,
 				A052B90C217ADD9A0049ED02 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
