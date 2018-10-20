@@ -16,7 +16,7 @@ enum PageType: String {
     func viewControllerColor() -> UIColor {
         switch self {
         case .first:
-            return UIColor.white
+            return UIColor.black
         case .second:
             return UIColor.yellow
         case .third:
@@ -42,9 +42,9 @@ final class ViewController: UIViewController {
             ViewController.make(type: .third)
         ]
     }
-    
+
     var pageType: PageType!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -52,6 +52,7 @@ final class ViewController: UIViewController {
     
     private func configure() {
         self.view.backgroundColor = pageType.viewControllerColor()
+        print(pageType)
     }
 }
 

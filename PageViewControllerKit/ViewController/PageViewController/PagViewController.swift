@@ -10,6 +10,7 @@ import UIKit
 
 final class PageViewController: UIPageViewController {
     private let pageType: [PageType] = [.first, .second, .third]
+    private var currentPage = 0
     
     lazy var pageViewControllers: [ViewController] = {
         return ViewController.makeList()
@@ -21,43 +22,43 @@ final class PageViewController: UIPageViewController {
     }
     
     private func configure() {
-        
+        configurePageViewController()
     }
     
     private func configurePageViewController() {
-//        dataSource = self
-//        delegate = self
+        dataSource = self
         configurePageFirstView()
     }
     
     private func configurePageFirstView() {
-        guard let firstPage = pageViewControllers.first else {
-            assertionFailure()
-            return
-        }
+        guard let firstPage = pageViewControllers.first else { return }
         setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
     }
     
 }
-//extension PageViewController: UIPageViewControllerDelegate {
-//}
-//
-//extension PageViewController: UIPageViewControllerDataSource {
-//}
-//    //DataSourceのメソッド
-//    //指定されたViewControllerの前にViewControllerを返す
-//    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-//        var index = viewController.view.tag
-//        pageControl.currentPage = index
-//        index = index - 1
-//        if index < 0{
-//            return nil
-//        }
-//        return viewControllersArray[index]
-//    }
-//
-//    //Viewが変更されると呼ばれる
-//    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating: Bool, previousViewControllers: [UIViewController], transitionCompleted: Bool) {
-//        print("moved")
-//    }
-//}
+
+extension PageViewController: UIPageViewControllerDataSource {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        if viewController.isKind(of: ViewController.self) {
+            guard let viewController = viewController as? ViewController, var index = pageViewControllers.index(of: viewController) else { return nil }
+            currentPage = index
+            index -= 1
+            if index < 0 { return nil }
+            return pageViewControllers[index]
+        } else {
+            return nil
+        }
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        if viewController.isKind(of: ViewController.self) {
+            guard let viewController = viewController as? ViewController, var index = pageViewControllers.index(of: viewController) else { return nil }
+            currentPage = index
+            if index == pageType.count - 1 { return nil }
+            index += 1
+            return pageViewControllers[index]
+        } else {
+            return nil
+        }
+    }
+}
