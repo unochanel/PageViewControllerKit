@@ -8,32 +8,50 @@
 
 import UIKit
 
-final class RootViewController: UIViewController {
+fileprivate let titleWidth: CGFloat = 100.0
+fileprivate let indicatorViewHeight: CGFloat = 4.0
 
-    private let pageType: [PageType] = [.first, .second, .third]
+final class RootViewController: UIViewController {
+    
+    private let pageType: [PageType] = [.first, .second, .third, .forth, .fifth]
     @IBOutlet private weak var pageContainerView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
-
+    
+    private let selectionIndicatorView: UIView = {
+        let view: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: titleWidth, height: indicatorViewHeight))
+        view.backgroundColor = UIColor.blue
+        view.layer.cornerRadius = 1
+        view.clipsToBounds = true
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
-
+    
     private func configure() {
         collectionView.dataSource = self
         collectionView.delegate = self
         embedPageViewController()
         configureCollectionView()
+        configureIndicatorView()
     }
-
+    
     private func embedPageViewController() {
         let viewController = PageViewController.make(type: pageType)
         embed(viewController, to: pageContainerView)
     }
-
+    
     private func configureCollectionView() {
         collectionView.register(UINib(nibName: SegmentCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: SegmentCell.reuseIdentifier)
         collectionView.scrollsToTop = false
+    }
+    
+    private func configureIndicatorView() {
+        selectionIndicatorView.frame.origin.y = collectionView.frame.height - indicatorViewHeight
+        collectionView.addSubview(selectionIndicatorView)
+        
     }
 }
 
@@ -54,6 +72,6 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
         let label = UILabel()
         label.text = pageType[indexPath.row].rawValue
         label.sizeToFit()
-        return CGSize(width: label.frame.size.width + 24, height: label.frame.size.height + 24)
+        return CGSize(width: 100, height: label.frame.size.height + 24)
     }
 }
