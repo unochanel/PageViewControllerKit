@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="erX-cn-Cku">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="EZk-FQ-die">
+            <objects>
+                <viewController id="erX-cn-Cku" customClass="RootViewController" customModule="PageViewControllerKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YzJ-el-jod">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zo-9R-4Nt">
+                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekJ-dB-Sjr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="SZa-sV-Bm3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3zo-9R-4Nt" firstAttribute="trailing" secondItem="R3Q-e1-r6w" secondAttribute="trailing" id="31f-Lp-X8T"/>
+                            <constraint firstItem="3zo-9R-4Nt" firstAttribute="leading" secondItem="R3Q-e1-r6w" secondAttribute="leading" id="Elh-fW-SjJ"/>
+                            <constraint firstItem="ekJ-dB-Sjr" firstAttribute="leading" secondItem="R3Q-e1-r6w" secondAttribute="leading" id="LO9-hy-gbU"/>
+                            <constraint firstItem="3zo-9R-4Nt" firstAttribute="bottom" secondItem="R3Q-e1-r6w" secondAttribute="bottom" id="Wup-nw-qE5"/>
+                            <constraint firstItem="ekJ-dB-Sjr" firstAttribute="top" secondItem="YzJ-el-jod" secondAttribute="top" id="ghE-Hj-jE3"/>
+                            <constraint firstItem="ekJ-dB-Sjr" firstAttribute="trailing" secondItem="R3Q-e1-r6w" secondAttribute="trailing" id="iLn-47-SOd"/>
+                            <constraint firstItem="3zo-9R-4Nt" firstAttribute="top" secondItem="ekJ-dB-Sjr" secondAttribute="bottom" id="k4T-bI-PwD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="R3Q-e1-r6w"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageContainerView" destination="3zo-9R-4Nt" id="GvV-Gd-5Pq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tu6-0R-H6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="-256.82158920539734"/>
+        </scene>
+    </scenes>
+</document>

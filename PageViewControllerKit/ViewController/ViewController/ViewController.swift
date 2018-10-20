@@ -52,7 +52,6 @@ final class ViewController: UIViewController {
     
     private func configure() {
         self.view.backgroundColor = pageType.viewControllerColor()
-        print(pageType)
     }
 }
 
