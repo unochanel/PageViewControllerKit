@@ -11,13 +11,14 @@ import UIKit
 final class PageViewController: UIPageViewController {
     static let reuseIdentifier = "PageViewController"
         
-    static func make() -> PageViewController {
+    static func make(type: [PageType]) -> PageViewController {
         let storyboard = UIStoryboard(name: reuseIdentifier, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: reuseIdentifier) as! PageViewController
+        type.map { viewController.pageType.append($0) }
         return viewController
     }
 
-    private let pageType: [PageType] = [.first, .second, .third]
+    private var pageType: [PageType] = []
     private var currentPage = 0
     
     lazy var pageViewControllers: [ViewController] = {
