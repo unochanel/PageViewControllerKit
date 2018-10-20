@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate let titleWidth: CGFloat = 100.0
+fileprivate let titleWidth: CGFloat = 110.0
 fileprivate let indicatorViewHeight: CGFloat = 4.0
 
 final class RootViewController: UIViewController {
@@ -16,7 +16,7 @@ final class RootViewController: UIViewController {
     private let pageType: [PageType] = [.first, .second, .third, .forth, .fifth]
     @IBOutlet private weak var pageContainerView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
-    
+
     private let selectionIndicatorView: UIView = {
         let view: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: titleWidth, height: indicatorViewHeight))
         view.backgroundColor = UIColor.blue
@@ -51,7 +51,6 @@ final class RootViewController: UIViewController {
     private func configureIndicatorView() {
         selectionIndicatorView.frame.origin.y = collectionView.frame.height - indicatorViewHeight
         collectionView.addSubview(selectionIndicatorView)
-        
     }
 }
 
@@ -67,11 +66,15 @@ extension RootViewController: UICollectionViewDataSource {
     }
 }
 
-extension RootViewController: UICollectionViewDelegateFlowLayout {
+extension RootViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let label = UILabel()
         label.text = pageType[indexPath.row].rawValue
         label.sizeToFit()
         return CGSize(width: 100, height: label.frame.size.height + 24)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectionIndicatorView.frame.origin.x = CGFloat(indexPath.row * Int(titleWidth))
     }
 }
