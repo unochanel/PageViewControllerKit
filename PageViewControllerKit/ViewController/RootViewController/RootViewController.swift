@@ -21,6 +21,7 @@ final class RootViewController: UIViewController {
 
     private func configure() {
         collectionView.dataSource = self
+        collectionView.delegate = self
         embedPageViewController()
         configureCollectionView()
     }
@@ -32,6 +33,7 @@ final class RootViewController: UIViewController {
 
     private func configureCollectionView() {
         collectionView.register(UINib(nibName: SegmentCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: SegmentCell.reuseIdentifier)
+        collectionView.scrollsToTop = false
     }
 }
 
@@ -44,5 +46,14 @@ extension RootViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SegmentCell.reuseIdentifier, for: indexPath) as! SegmentCell
         cell.configure(item: pageType[indexPath.row])
         return cell
+    }
+}
+
+extension RootViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let label = UILabel()
+        label.text = pageType[indexPath.row].rawValue
+        label.sizeToFit()
+        return CGSize(width: label.frame.size.width + 24, height: label.frame.size.height + 24)
     }
 }
