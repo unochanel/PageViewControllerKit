@@ -11,9 +11,9 @@ import UIKit
 final class SegmentCell: UICollectionViewCell {
     static let reuseIdentifier = "SegmentCell"
     @IBOutlet private weak var titleLabel: UILabel!
-    
+
     func configure(item: PageType) {
-        titleLabel.text = item.rawValue
+        titleLabel.text = item.title()
         titleLabel.layer.cornerRadius = 5
         titleLabel.layer.backgroundColor = item.viewControllerColor().cgColor
     }

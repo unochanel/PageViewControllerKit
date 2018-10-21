@@ -12,7 +12,7 @@ fileprivate let titleCollectionViewHeight: CGFloat = 50.0
 
 final class RootViewController: UIViewController {
     
-    private let pageType: [PageType] = [.first, .second, .third, .forth, .fifth, .sixth]
+    private let pageType: [PageType] = PageType.allCases
     @IBOutlet private weak var pageContainerView: UIView!
     @IBOutlet private weak var pagingSegmentedControlView: UIView!
     private var pagingSegmentedControl: PagingSegmentedControl!
@@ -50,5 +50,3 @@ extension RootViewController {
         pagingSegmentedControl.heightAnchor.constraint(equalToConstant: titleCollectionViewHeight).isActive = true
     }
 }
-
-

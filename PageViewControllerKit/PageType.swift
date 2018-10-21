@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum PageType: String {
+enum PageType: Int, CaseIterable {
     case first
     case second
     case third
@@ -30,6 +30,23 @@ enum PageType: String {
             return UIColor.purple
         case .sixth:
             return UIColor.red
+        }
+    }
+
+    func title() -> String {
+        switch self {
+        case .first:
+            return "first"
+        case .second:
+            return "second"
+        case .third:
+            return "third"
+        case .forth:
+            return "forth"
+        case .fifth:
+            return "fifth"
+        case .sixth:
+            return "sixth"
         }
     }
 }

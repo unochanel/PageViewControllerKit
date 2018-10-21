@@ -20,7 +20,6 @@
 		A052B940217B13BC0049ED02 /* SegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A052B93E217B13BC0049ED02 /* SegmentCell.xib */; };
 		A052B94B217B31690049ED02 /* PagingSegmentViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B94A217B31690049ED02 /* PagingSegmentViewControl.swift */; };
 		A07B5B99217C2C54000B01B1 /* SegmentCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B5B98217C2C54000B01B1 /* SegmentCellDelegate.swift */; };
-		A07B5B9B217C51A0000B01B1 /* PageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07B5B9A217C51A0000B01B1 /* PageViewController.storyboard */; };
 		A07B5B9E217C5E52000B01B1 /* PageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B5B9D217C5E52000B01B1 /* PageType.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +39,6 @@
 		A052B93E217B13BC0049ED02 /* SegmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentCell.xib; sourceTree = "<group>"; };
 		A052B94A217B31690049ED02 /* PagingSegmentViewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingSegmentViewControl.swift; sourceTree = "<group>"; };
 		A07B5B98217C2C54000B01B1 /* SegmentCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCellDelegate.swift; sourceTree = "<group>"; };
-		A07B5B9A217C51A0000B01B1 /* PageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PageViewController.storyboard; sourceTree = "<group>"; };
 		A07B5B9D217C5E52000B01B1 /* PageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				A052B91E217ADFF20049ED02 /* PagViewController.swift */,
-				A07B5B9A217C51A0000B01B1 /* PageViewController.storyboard */,
 			);
 			path = PageViewController;
 			sourceTree = "<group>";
@@ -212,7 +209,6 @@
 				A052B916217ADD9F0049ED02 /* LaunchScreen.storyboard in Resources */,
 				A052B913217ADD9F0049ED02 /* Assets.xcassets in Resources */,
 				A052B92E217AFF2D0049ED02 /* RootViewController.storyboard in Resources */,
-				A07B5B9B217C51A0000B01B1 /* PageViewController.storyboard in Resources */,
 				A052B911217ADD9A0049ED02 /* ViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

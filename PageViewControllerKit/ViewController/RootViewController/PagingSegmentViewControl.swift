@@ -113,7 +113,7 @@ extension PagingSegmentedControl: UICollectionViewDelegate, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let label = UILabel()
-        label.text = items[indexPath.row].rawValue
+        label.text = items[indexPath.row].title()
         label.sizeToFit()
         return CGSize(width: titleWidth, height: label.frame.size.height + 24)
         
@@ -127,6 +127,5 @@ extension PagingSegmentedControl {
         titleCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0.0).isActive = true
         titleCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0.0).isActive = true
         titleCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0.0).isActive = true
-        
     }
 }

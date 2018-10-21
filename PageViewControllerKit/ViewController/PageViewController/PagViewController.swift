@@ -11,11 +11,9 @@ import UIKit
 fileprivate var shouldLord = true
 
 final class PageViewController: UIPageViewController {
-    static let reuseIdentifier = "PageViewController"
     
     static func make(type: [PageType]) -> PageViewController {
-        let storyboard = UIStoryboard(name: reuseIdentifier, bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: reuseIdentifier) as! PageViewController
+        let viewController = PageViewController()
         _ = type.map { viewController.pageType.append($0) }
         return viewController
     }
