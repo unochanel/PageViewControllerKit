@@ -49,8 +49,4 @@ enum PageType: String {
             return "sixth"
         }
     }
-
-    func number() -> Int {
-        return PageType.sixth.rawValue
-    }
 }
