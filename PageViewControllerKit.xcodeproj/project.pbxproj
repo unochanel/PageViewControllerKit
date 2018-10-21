@@ -19,6 +19,8 @@
 		A052B931217B02290049ED02 /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B930217B02290049ED02 /* UIViewController+Ex.swift */; };
 		A052B93F217B13BC0049ED02 /* SegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B93D217B13BC0049ED02 /* SegmentCell.swift */; };
 		A052B940217B13BC0049ED02 /* SegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A052B93E217B13BC0049ED02 /* SegmentCell.xib */; };
+		A052B94B217B31690049ED02 /* PagingSegmentViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B94A217B31690049ED02 /* PagingSegmentViewControl.swift */; };
+		A07B5B99217C2C54000B01B1 /* SegmentCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B5B98217C2C54000B01B1 /* SegmentCellDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		A052B930217B02290049ED02 /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
 		A052B93D217B13BC0049ED02 /* SegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCell.swift; sourceTree = "<group>"; };
 		A052B93E217B13BC0049ED02 /* SegmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentCell.xib; sourceTree = "<group>"; };
+		A052B94A217B31690049ED02 /* PagingSegmentViewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingSegmentViewControl.swift; sourceTree = "<group>"; };
+		A07B5B98217C2C54000B01B1 /* SegmentCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCellDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				A052B90B217ADD9A0049ED02 /* AppDelegate.swift */,
 				A052B91D217ADDAD0049ED02 /* ViewController */,
 				A052B92F217B01F80049ED02 /* Extension */,
+				A07B5B97217C2C3A000B01B1 /* ProtoCol */,
 				A052B912217ADD9F0049ED02 /* Assets.xcassets */,
 				A052B914217ADD9F0049ED02 /* LaunchScreen.storyboard */,
 				A052B917217ADD9F0049ED02 /* Info.plist */,
@@ -113,6 +118,7 @@
 				A052B92D217AFF2D0049ED02 /* RootViewController.storyboard */,
 				A052B93D217B13BC0049ED02 /* SegmentCell.swift */,
 				A052B93E217B13BC0049ED02 /* SegmentCell.xib */,
+				A052B94A217B31690049ED02 /* PagingSegmentViewControl.swift */,
 			);
 			path = RootViewController;
 			sourceTree = "<group>";
@@ -123,6 +129,14 @@
 				A052B930217B02290049ED02 /* UIViewController+Ex.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		A07B5B97217C2C3A000B01B1 /* ProtoCol */ = {
+			isa = PBXGroup;
+			children = (
+				A07B5B98217C2C54000B01B1 /* SegmentCellDelegate.swift */,
+			);
+			path = ProtoCol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +214,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A052B91F217ADFF20049ED02 /* PagViewController.swift in Sources */,
+				A052B94B217B31690049ED02 /* PagingSegmentViewControl.swift in Sources */,
+				A07B5B99217C2C54000B01B1 /* SegmentCellDelegate.swift in Sources */,
 				A052B931217B02290049ED02 /* UIViewController+Ex.swift in Sources */,
 				A052B90E217ADD9A0049ED02 /* ViewController.swift in Sources */,
 				A052B93F217B13BC0049ED02 /* SegmentCell.swift in Sources */,
