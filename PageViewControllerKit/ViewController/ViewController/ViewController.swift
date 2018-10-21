@@ -8,29 +8,6 @@
 
 import UIKit
 
-enum PageType: String {
-    case first
-    case second
-    case third
-    case forth
-    case fifth
-    
-    func viewControllerColor() -> UIColor {
-        switch self {
-        case .first:
-            return UIColor.white
-        case .second:
-            return UIColor.yellow
-        case .third:
-            return UIColor.green
-        case .forth:
-            return UIColor.blue
-        case .fifth:
-            return UIColor.purple
-        }
-    }
-}
-
 final class ViewController: UIViewController {
     static let reuseIdentifier = "ViewController"
     
@@ -48,10 +25,11 @@ final class ViewController: UIViewController {
             ViewController.make(type: .third),
             ViewController.make(type: .forth),
             ViewController.make(type: .fifth),
+            ViewController.make(type: .sixth)
         ]
     }
 
-    var pageType: PageType!
+    private var pageType: PageType!
 
     override func viewDidLoad() {
         super.viewDidLoad()

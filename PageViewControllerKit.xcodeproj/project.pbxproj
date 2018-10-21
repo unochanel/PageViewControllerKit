@@ -13,7 +13,6 @@
 		A052B913217ADD9F0049ED02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A052B912217ADD9F0049ED02 /* Assets.xcassets */; };
 		A052B916217ADD9F0049ED02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A052B914217ADD9F0049ED02 /* LaunchScreen.storyboard */; };
 		A052B91F217ADFF20049ED02 /* PagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B91E217ADFF20049ED02 /* PagViewController.swift */; };
-		A052B925217AE6D00049ED02 /* PageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A052B924217AE6D00049ED02 /* PageViewController.storyboard */; };
 		A052B92C217AFF210049ED02 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B92B217AFF210049ED02 /* RootViewController.swift */; };
 		A052B92E217AFF2D0049ED02 /* RootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A052B92D217AFF2D0049ED02 /* RootViewController.storyboard */; };
 		A052B931217B02290049ED02 /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B930217B02290049ED02 /* UIViewController+Ex.swift */; };
@@ -21,6 +20,8 @@
 		A052B940217B13BC0049ED02 /* SegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A052B93E217B13BC0049ED02 /* SegmentCell.xib */; };
 		A052B94B217B31690049ED02 /* PagingSegmentViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052B94A217B31690049ED02 /* PagingSegmentViewControl.swift */; };
 		A07B5B99217C2C54000B01B1 /* SegmentCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B5B98217C2C54000B01B1 /* SegmentCellDelegate.swift */; };
+		A07B5B9B217C51A0000B01B1 /* PageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07B5B9A217C51A0000B01B1 /* PageViewController.storyboard */; };
+		A07B5B9E217C5E52000B01B1 /* PageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B5B9D217C5E52000B01B1 /* PageType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +33,6 @@
 		A052B915217ADD9F0049ED02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A052B917217ADD9F0049ED02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A052B91E217ADFF20049ED02 /* PagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagViewController.swift; sourceTree = "<group>"; };
-		A052B924217AE6D00049ED02 /* PageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PageViewController.storyboard; sourceTree = "<group>"; };
 		A052B92B217AFF210049ED02 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		A052B92D217AFF2D0049ED02 /* RootViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootViewController.storyboard; sourceTree = "<group>"; };
 		A052B930217B02290049ED02 /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
@@ -40,6 +40,8 @@
 		A052B93E217B13BC0049ED02 /* SegmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentCell.xib; sourceTree = "<group>"; };
 		A052B94A217B31690049ED02 /* PagingSegmentViewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingSegmentViewControl.swift; sourceTree = "<group>"; };
 		A07B5B98217C2C54000B01B1 /* SegmentCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCellDelegate.swift; sourceTree = "<group>"; };
+		A07B5B9A217C51A0000B01B1 /* PageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PageViewController.storyboard; sourceTree = "<group>"; };
+		A07B5B9D217C5E52000B01B1 /* PageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,8 @@
 				A052B90B217ADD9A0049ED02 /* AppDelegate.swift */,
 				A052B91D217ADDAD0049ED02 /* ViewController */,
 				A052B92F217B01F80049ED02 /* Extension */,
-				A07B5B97217C2C3A000B01B1 /* ProtoCol */,
+				A07B5B97217C2C3A000B01B1 /* Protocol */,
+				A07B5B9C217C5E43000B01B1 /* Enum */,
 				A052B912217ADD9F0049ED02 /* Assets.xcassets */,
 				A052B914217ADD9F0049ED02 /* LaunchScreen.storyboard */,
 				A052B917217ADD9F0049ED02 /* Info.plist */,
@@ -97,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				A052B91E217ADFF20049ED02 /* PagViewController.swift */,
-				A052B924217AE6D00049ED02 /* PageViewController.storyboard */,
+				A07B5B9A217C51A0000B01B1 /* PageViewController.storyboard */,
 			);
 			path = PageViewController;
 			sourceTree = "<group>";
@@ -131,12 +134,20 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		A07B5B97217C2C3A000B01B1 /* ProtoCol */ = {
+		A07B5B97217C2C3A000B01B1 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				A07B5B98217C2C54000B01B1 /* SegmentCellDelegate.swift */,
 			);
-			path = ProtoCol;
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A07B5B9C217C5E43000B01B1 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				A07B5B9D217C5E52000B01B1 /* PageType.swift */,
+			);
+			name = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,11 +208,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A052B925217AE6D00049ED02 /* PageViewController.storyboard in Resources */,
 				A052B940217B13BC0049ED02 /* SegmentCell.xib in Resources */,
 				A052B916217ADD9F0049ED02 /* LaunchScreen.storyboard in Resources */,
 				A052B913217ADD9F0049ED02 /* Assets.xcassets in Resources */,
 				A052B92E217AFF2D0049ED02 /* RootViewController.storyboard in Resources */,
+				A07B5B9B217C51A0000B01B1 /* PageViewController.storyboard in Resources */,
 				A052B911217ADD9A0049ED02 /* ViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +229,7 @@
 				A07B5B99217C2C54000B01B1 /* SegmentCellDelegate.swift in Sources */,
 				A052B931217B02290049ED02 /* UIViewController+Ex.swift in Sources */,
 				A052B90E217ADD9A0049ED02 /* ViewController.swift in Sources */,
+				A07B5B9E217C5E52000B01B1 /* PageType.swift in Sources */,
 				A052B93F217B13BC0049ED02 /* SegmentCell.swift in Sources */,
 				A052B92C217AFF210049ED02 /* RootViewController.swift in Sources */,
 				A052B90C217ADD9A0049ED02 /* AppDelegate.swift in Sources */,

@@ -8,14 +8,16 @@
 
 import UIKit
 
-
 fileprivate let titleCollectionViewHeight: CGFloat = 50.0
 
 final class RootViewController: UIViewController {
-    private let pageType: [PageType] = [.first, .second, .third, .forth, .fifth]
+    
+    private let pageType: [PageType] = [.first, .second, .third, .forth, .fifth, .sixth]
     @IBOutlet private weak var pageContainerView: UIView!
     @IBOutlet private weak var pagingSegmentedControlView: UIView!
     private var pagingSegmentedControl: PagingSegmentedControl!
+    private var pageViewController: PageViewController!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -28,11 +30,12 @@ final class RootViewController: UIViewController {
     
     private func embedPageViewController() {
         let viewController = PageViewController.make(type: pageType)
+        pageViewController = viewController
         embed(viewController, to: pageContainerView)
     }
     
     private func configureSegmentedControl() {
-        pagingSegmentedControl = PagingSegmentedControl.make(items: pageType)
+        pagingSegmentedControl = PagingSegmentedControl.make(items: pageType, delegate: pageViewController)
         pagingSegmentedControlView.addSubview(pagingSegmentedControl)
         adujustPaginsegmentedControlLayout()
     }

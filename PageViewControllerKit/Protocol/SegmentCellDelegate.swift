@@ -9,3 +9,8 @@
 protocol SegmentCellDelegateProtocol {
     func tappedSegmentCell(_ tappedPageType: PageType, selectedIndex index: Int)
 }
+
+
+protocol SwipePageViewControllerDelgateProtocol {
+    func swipePageViewController(_ swipdDirection: Bool)
+}
