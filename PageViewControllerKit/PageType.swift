@@ -32,21 +32,4 @@ enum PageType: String {
             return UIColor.red
         }
     }
-
-    func string() -> String {
-        switch self {
-        case .first:
-            return "first"
-        case .second:
-            return "second"
-        case .third:
-            return "third"
-        case .forth:
-            return "forth"
-        case .fifth:
-            return "fifth"
-        case .sixth:
-            return "sixth"
-        }
-    }
 }
