@@ -8,42 +8,51 @@
 
 import UIKit
 
+fileprivate var shouldLord = true
+
 final class PageViewController: UIPageViewController {
     static let reuseIdentifier = "PageViewController"
-        
+    
     static func make(type: [PageType]) -> PageViewController {
         let storyboard = UIStoryboard(name: reuseIdentifier, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: reuseIdentifier) as! PageViewController
-        type.map { viewController.pageType.append($0) }
+        _ = type.map { viewController.pageType.append($0) }
         return viewController
     }
-
-    private var pageType: [PageType] = []
-    private var currentPage = 0
     
     lazy var pageViewControllers: [ViewController] = {
         return ViewController.makeList()
     }()
     
+    private var pageType: [PageType] = []
+    private var currentPage = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataSource = self
+        guard shouldLord else { return }
         configure()
     }
     
     private func configure() {
-        configurePageViewController()
-    }
-    
-    private func configurePageViewController() {
-        dataSource = self
-        configurePageFirstView()
-    }
-    
-    private func configurePageFirstView() {
         guard let firstPage = pageViewControllers.first else { return }
-        setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
+        setViewControllers([firstPage], direction: .forward, animated: false, completion: nil)
+        shouldLord = false
     }
-    
+}
+
+extension PageViewController: SegmentCellDelegateProtocol {
+    func tappedSegmentCell(_ tappedPageType: PageType, selectedIndex index: Int) {
+        if currentPage == index { return }
+        if index >= currentPage {
+            let currentViewController = pageViewControllers[index]
+            setViewControllers([currentViewController], direction: .forward, animated: true, completion: nil)
+        } else {
+            let currentViewController = pageViewControllers[index]
+            setViewControllers([currentViewController], direction: .reverse, animated: true, completion: nil)
+        }
+        currentPage = index
+    }
 }
 
 extension PageViewController: UIPageViewControllerDataSource {

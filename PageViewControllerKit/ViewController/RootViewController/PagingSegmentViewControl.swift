@@ -11,15 +11,15 @@ import UIKit
 fileprivate let titleWidth: CGFloat = 110.0
 fileprivate let indicatorViewHeight: CGFloat = 4.0
 
-class PagingSegmentedControl: UIControl, SegmentCellDelegateProtocol {
-    static func make(items: [PageType]) -> PagingSegmentedControl {
-        let segmentedControl = PagingSegmentedControl(items: items)
+class PagingSegmentedControl: UIControl {
+    static func make(items: [PageType], delegate: SegmentCellDelegateProtocol) -> PagingSegmentedControl {
+        let segmentedControl = PagingSegmentedControl(items: items, delegate: delegate)
         return segmentedControl
     }
-
+    
     private let items: [PageType]
     private let segmentDelegate: SegmentCellDelegateProtocol?
-
+    
     private let titleCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0.0
@@ -34,8 +34,9 @@ class PagingSegmentedControl: UIControl, SegmentCellDelegateProtocol {
         collectionView.register(UINib(nibName: SegmentCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: SegmentCell.reuseIdentifier)
         return collectionView
     }()
-        private let selectionIndicatorView: UIView = {
-        let view: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: titleWidth, height: indicatorViewHeight))
+    private let selectionIndicatorView: UIView = {
+//        let view: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: titleWidth, height: indicatorViewHeight))
+        let view: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 0, height: 0))
         view.backgroundColor = UIColor.blue
         view.layer.cornerRadius = 1
         view.clipsToBounds = true
@@ -58,7 +59,7 @@ class PagingSegmentedControl: UIControl, SegmentCellDelegateProtocol {
         titleCollectionView.delegate = self
         addSubview(titleCollectionView)
         adjuustSegmentedControl()
-
+        
         selectionIndicatorView.frame.origin.y = frame.height - indicatorViewHeight
         selectionIndicatorView.autoresizingMask = [.flexibleTopMargin]
         titleCollectionView.addSubview(selectionIndicatorView)
@@ -100,14 +101,22 @@ extension PagingSegmentedControl: UICollectionViewDataSource {
 extension PagingSegmentedControl: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         segmentDelegate?.tappedSegmentCell(items[indexPath.row], selectedIndex: indexPath.item)
+        selectionIndicatorView.isHidden = items.count == 1
+        guard !items.isEmpty else { return }
+
+        let indexPath = IndexPath(item: indexPath.row, section: 0)
+        titleCollectionView.selectItem(at: indexPath,
+                                       animated: true,
+                                       scrollPosition: .centeredHorizontally)
         sendActions(for: .valueChanged)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let label = UILabel()
         label.text = items[indexPath.row].rawValue
         label.sizeToFit()
         return CGSize(width: titleWidth, height: label.frame.size.height + 24)
+        
     }
 }
 
