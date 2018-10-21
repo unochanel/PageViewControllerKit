@@ -19,14 +19,7 @@ final class ViewController: UIViewController {
     }
     
     static func makeList() -> [ViewController] {
-        return [
-            ViewController.make(type: .first),
-            ViewController.make(type: .second),
-            ViewController.make(type: .third),
-            ViewController.make(type: .forth),
-            ViewController.make(type: .fifth),
-            ViewController.make(type: .sixth)
-        ]
+        return PageType.allCases.map { ViewController.make(type: $0)}
     }
 
     private var pageType: PageType!
