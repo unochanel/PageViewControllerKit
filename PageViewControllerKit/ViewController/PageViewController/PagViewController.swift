@@ -8,8 +8,6 @@
 
 import UIKit
 
-fileprivate var shouldLord = true
-
 final class PageViewController: UIPageViewController {
     
     static func make(type: [PageType]) -> PageViewController {
@@ -28,14 +26,13 @@ final class PageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
-        guard shouldLord else { return }
         configure()
+        
     }
     
     private func configure() {
         guard let firstPage = pageViewControllers.first else { return }
         setViewControllers([firstPage], direction: .forward, animated: false, completion: nil)
-        shouldLord = false
     }
 }
 

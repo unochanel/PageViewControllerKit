@@ -19,7 +19,7 @@ final class ViewController: UIViewController {
     }
     
     static func makeList() -> [ViewController] {
-        return PageType.allCases.map { ViewController.make(type: $0)}
+        return PageType.allCases.map { ViewController.make(type: $0) }
     }
 
     private var pageType: PageType!
